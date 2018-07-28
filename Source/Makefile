@@ -1,6 +1,6 @@
 CXX := /usr/bin/g++
 CXXFLAGS = -Wall 
-SDL = -lSDL2 -lSDL2_ttf -lSDL2_image -no-pie
+SDL = -lSDL2 -lSDL2_ttf -lSDL2_image
 SRCS = gameblocks.cpp init.cpp main.cpp snakegame.cpp textbox.cpp
 OBJS = $(patsubst %.cpp,%.o,$(SRCS))
 PROG = Snake
