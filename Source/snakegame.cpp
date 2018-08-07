@@ -32,6 +32,11 @@ Snake_Game::Snake_Game()
     high_score = 0;
 }
 
+void Snake_Game::reset() {
+    high_score = (current_score > high_score) ? current_score : high_score;
+    current_score = 0;
+}
+
 bool Snake_Game::init()
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) { return false; }
@@ -63,6 +68,7 @@ int Snake_Game::game_loop()
 bool Snake_Game::play_again()
 {
     clear_screen();
+    reset();
     string font = "../Other/Pixel Countdown.ttf";
     TextBox title("Play Again?", window_width * 1/10, window_height * 1/20, window_width * 8/10, window_height * 3/10, font, Light_Green, Light_Green);
     TextBox yes("Yes", window_width * 3/10, window_height * 6/10, window_width * 1/10, window_height * 1/10, font, White, Yellow);
@@ -125,13 +131,11 @@ int Snake_Game::begin_game()
         if (SDL_PollEvent(&event))
         {
             if (event.type == SDL_QUIT) { break; }
-
             if (event.type == SDL_KEYDOWN)
             {
                 const Uint8 * keys = SDL_GetKeyboardState(NULL);
-
-                if (keys[SDL_SCANCODE_UP] && movement != DOWN && movement != NONE) { movement = UP; }
-                else if (keys[SDL_SCANCODE_DOWN] && movement != UP) { movement = DOWN; }
+                if (keys[SDL_SCANCODE_UP] && movement != DOWN) { movement = UP; }
+                else if (keys[SDL_SCANCODE_DOWN] && movement != UP && movement != NONE) { movement = DOWN; }
                 else if (keys[SDL_SCANCODE_RIGHT] && movement != LEFT) { movement = RIGHT; }
                 else if (keys[SDL_SCANCODE_LEFT] && movement != RIGHT) { movement = LEFT; }
             }
@@ -156,7 +160,7 @@ int Snake_Game::begin_game()
         snake.Render(main_Renderer, Black, movement);
         SDL_RenderPresent(main_Renderer);
         Uint32 end = SDL_GetTicks();
-        fps_cap(start, end, 30);
+        fps_cap(start, end, 15);
     }
 
     return -1;

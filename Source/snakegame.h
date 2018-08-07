@@ -47,6 +47,8 @@ public:
 
     GameBlock point_block(SDL_Rect & rectangle);
 
+    void reset();
+
     void exit();
 
 private:
