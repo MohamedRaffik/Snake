@@ -69,7 +69,7 @@ bool Snake_Game::play_again()
 {
     clear_screen();
     reset();
-    string font = "../Other/Pixel Countdown.ttf";
+    string font = "Other/Pixel Countdown.ttf";
     TextBox title("Play Again?", window_width * 1/10, window_height * 1/20, window_width * 8/10, window_height * 3/10, font, Light_Green, Light_Green);
     TextBox yes("Yes", window_width * 3/10, window_height * 6/10, window_width * 1/10, window_height * 1/10, font, White, Yellow);
     TextBox no("No", window_width * 6/10, window_height * 6/10, window_width * 1/10, window_height * 1/10, font, White, Yellow);
@@ -104,7 +104,7 @@ bool Snake_Game::play_again()
 int Snake_Game::begin_game()
 {
     string text[3] = {"", ""};
-    string font = "../Other/Pixel Countdown.ttf";
+    string font = "Other/Pixel Countdown.ttf";
     text[0] = adjust_score_string(current_score);
     text[1] = adjust_score_string(high_score);
     clear_screen();
@@ -168,7 +168,7 @@ int Snake_Game::begin_game()
 
 int Snake_Game::pick_color()
 {
-    string font = "../Other/Pixel Countdown.ttf";
+    string font = "Other/Pixel Countdown.ttf";
     clear_screen();
     TextBox title("Snake", window_width * 1/10, window_height * 1/20, window_width * 8/10, window_height * 3/10, font, Light_Green, Light_Green);
     TextBox color_title("Pick Color",  window_width * 7/20, window_height * 4/10, window_width * 3/10, window_height * 1/10, font, White, White);
@@ -227,7 +227,7 @@ int Snake_Game::pick_color()
 
 MenuCodes Snake_Game::home_menu()
 {
-    string font = "../Other/Pixel Countdown.ttf";
+    string font = "Other/Pixel Countdown.ttf";
     clear_screen();
     TextBox title("Snake", window_width * 1/10, window_height * 1/20, window_width * 8/10, window_height * 3/10, font, Light_Green, Light_Green);
     TextBox start_game("Start Game",  window_width * 7/20, window_height * 4/10, window_width * 3/10, window_height * 1/10, font, White, Yellow);
@@ -271,7 +271,7 @@ MenuCodes Snake_Game::home_menu()
 
 MenuCodes Snake_Game::howtoplay_menu()
 {
-    string font = "../Other/Pixel Countdown.ttf";
+    string font = "Other/Pixel Countdown.ttf";
     clear_screen();
     TextBox title("How To Play", window_width * 1/10, window_height * 1/20, window_width * 8/10, window_height * 3/10, font, Light_Green, Light_Green);
     TextBox back("Back", window_width * 9/20, window_height * 17/20, window_width * 1/10, window_height * 1/10, font, White, Yellow);
@@ -303,7 +303,7 @@ MenuCodes Snake_Game::howtoplay_menu()
 
 MenuCodes Snake_Game::option_menu()
 {
-    string font = "../Other/Pixel Countdown.ttf";
+    string font = "Other/Pixel Countdown.ttf";
     clear_screen();
     TextBox title("Options", window_width * 1/10, window_height * 1/20, window_width * 8/10, window_height * 3/10, font, Light_Green, Light_Green);
     TextBox resolution("Resolution", window_width * 2/10, window_height * 5/10, window_width * 5/20, window_height * 1/10, font, White, White);
